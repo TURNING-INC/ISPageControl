@@ -10,10 +10,10 @@ import UIKit
 
 open class ISPageControl: UIControl {
     fileprivate let limit = 5
-    fileprivate var fullScaleIndex = [0, 1, 2]
+    fileprivate var fullScaleIndex = [0]
     fileprivate var dotLayers: [CALayer] = []
     fileprivate var diameter: CGFloat { return radius * 2 }
-    fileprivate var centerIndex: Int { return fullScaleIndex[1] }
+    fileprivate var centerIndex: Int { return fullScaleIndex[] }
     
     open var currentPage = 0 {
         didSet {
@@ -210,13 +210,9 @@ private extension ISPageControl {
         // TODO: Refactoring
         let moreThanBefore = (fullScaleIndex.last ?? 0) < currentPage
         if moreThanBefore {
-            fullScaleIndex[0] = currentPage - 2
-            fullScaleIndex[1] = currentPage - 1
-            fullScaleIndex[2] = currentPage
+            fullScaleIndex[0] = currentPage
         } else {
             fullScaleIndex[0] = currentPage
-            fullScaleIndex[1] = currentPage + 1
-            fullScaleIndex[2] = currentPage + 2
         }
     }
 }
