@@ -13,7 +13,7 @@ open class ISPageControl: UIControl {
     fileprivate var fullScaleIndex = [0]
     fileprivate var dotLayers: [CALayer] = []
     fileprivate var diameter: CGFloat { return radius * 2 }
-    fileprivate var centerIndex: Int { return fullScaleIndex[] }
+    fileprivate var centerIndex: Int { return fullScaleIndex[0] }
     
     open var currentPage = 0 {
         didSet {
